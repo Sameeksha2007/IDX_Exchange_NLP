@@ -74,7 +74,12 @@ async function main() {
     "Find single family homes in San Diego under $800k with 2 bathrooms",
     "Houses in Newport Beach under $2M with a view",
     "2 bed townhome in Pasadena under $600k",
-    "Find me land in Malibu"
+    "Find me land in Malibu",
+    "3 bed 2 bath house in Los Angeles under $1M",
+    "Condos in Santa Monica under $900k with a pool and view",
+    "Single family home in Riverside under $500k with 4 bedrooms",
+    "Townhome in Anaheim under $700k with 2.5 bathrooms",
+    "2 bedroom condo in Long Beach under $400k"
   ];
 
   for (const query of queries) {

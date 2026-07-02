@@ -1,6 +1,5 @@
 // Week 2 - Natural Language Property Search Parser
 
-// This is what the parser outputs - structured filters
 interface PropertyFilters {
   city: string | null;
   maxPrice: number | null;
@@ -12,7 +11,7 @@ interface PropertyFilters {
   hasView: string | null;
 }
 
-// Maps common words to database values
+// common words = database values
 const typeMap: Record<string, string> = {
   "condo": "Condominium",
   "townhome": "Townhouse",
@@ -22,7 +21,7 @@ const typeMap: Record<string, string> = {
   "land": "UnimprovedLand"
 };
 
-// The main parser function
+// main parser function
 export async function parsePropertyQuery(query: string): Promise<PropertyFilters> {
 
   // Extract city - looks for "in CityName"

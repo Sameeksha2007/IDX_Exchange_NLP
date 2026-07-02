@@ -22,8 +22,6 @@ export async function handleMessage(message: string) {
   if (message.toLowerCase().includes("hello") || 
       message.toLowerCase().includes("hi")) {
     return await getWelcome();
-  }
-  
   // if we don't understand, say so
   return { response: "I could not understand the request. Try saying 'hello' or 'what time is it'" };
 }

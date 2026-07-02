@@ -10,7 +10,7 @@ export async function getWelcome() {
   return { message: "Welcome to IDX Exchange AI Assistant!" };
 }
 
-// The main message handler - routes messages to the right tool
+// The main message handler: routes messages to the right tool
 export async function handleMessage(message: string) {
   
   // if the user asks about time, return the time
@@ -18,11 +18,11 @@ export async function handleMessage(message: string) {
     return await getCurrentTime();
   }
   
-  // if the user says hello, return a welcome message
+  // user says hello, return a welcome message
   if (message.toLowerCase().includes("hello") || 
       message.toLowerCase().includes("hi")) {
     return await getWelcome();
-  // if we don't understand, say so
+  // not understand
   return { response: "I could not understand the request. Try saying 'hello' or 'what time is it'" };
 }
 

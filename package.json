@@ -20,6 +20,8 @@
   "homepage": "https://github.com/Sameeksha2007/IDX_Exchange_NLP#readme",
   "dependencies": {
     "@types/node": "^26.0.1",
+    "dotenv": "^17.4.2",
+    "mysql2": "^3.22.6",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   }

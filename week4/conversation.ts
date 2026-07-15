@@ -115,7 +115,7 @@ if (!cityMatch) {
     let response = `Found ${listings.length} listings in ${session.city}:\n\n`;
     listings.forEach((l, i) => {
       response += `${i + 1}. ${l.L_Address}, ${l.L_City}\n`;
-      response += `   $${l.price?.toLocaleString()} | ${l.beds}bd/${l.baths}ba | ${l.sqft} sqft\n`;
+      response += `   $${l.price?.toLocaleString()} | ${l.beds}bd/${l.baths}ba | ${l.sqft} sqft | ${l.PhotoCount || 0} photos\n`;
       response += `   Agent: ${l.LA1_UserFirstName} ${l.LA1_UserLastName}\n\n`;
     });
     return response;

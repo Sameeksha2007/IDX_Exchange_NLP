@@ -11,7 +11,6 @@ interface PropertyFilters {
   hasView: string | null;
 }
 
-// common words = database values
 const typeMap: Record<string, string> = {
   "condo": "Condominium",
   "townhome": "Townhouse",
@@ -21,32 +20,16 @@ const typeMap: Record<string, string> = {
   "land": "UnimprovedLand"
 };
 
-// main parser function
 export async function parsePropertyQuery(query: string): Promise<PropertyFilters> {
-
-  // Extract city - looks for "in CityName"
-  const cityMatch = query.match(/in ([A-Za-z\s]+?)(?:\s+under|\s+with|\s+at|\s+for|$)/i);
-
-  // Extract max price - looks for "under $1.5M" or "under $500k"
+  const cityMatch = query.match(/in ([A-Za-z\s]+?)(?:\s+under|\s+with|\s+at|\s+and|\s+for|\s*$)/i);
   const priceMatch = query.match(/under \$?([\d,.]+)(k|m)?/i);
-
-  // Extract bedrooms - looks for "3 bed" or "3 bedroom"
   const bedsMatch = query.match(/(\d+)[\s-]*(bed|beds|bedroom|bedrooms)/i);
-
-  // Extract bathrooms - looks for "2 bath" or "2.5 bathroom"
   const bathsMatch = query.match(/(\d+(?:\.5)?)[\s-]*(bath|baths|bathroom)/i);
-
-  // Extract square footage - looks for "1800 sqft"
   const sqftMatch = query.match(/(\d+)[\s,]*(sqft|sq ft|square feet)/i);
-
-  // Check for pool and view
   const poolMatch = /pool/i.test(query);
   const viewMatch = /view/i.test(query);
-
-  // Find property type
   const typeKey = Object.keys(typeMap).find(k => query.toLowerCase().includes(k));
 
-  // Convert price to a number
   let maxPrice = null;
   if (priceMatch) {
     maxPrice = Number(priceMatch[1].replace(/,/g, ""));
@@ -66,7 +49,6 @@ export async function parsePropertyQuery(query: string): Promise<PropertyFilters
   };
 }
 
-// Test the parser
 async function main() {
   const queries = [
     "Show me 3 bedroom condos in Irvine under $1.5M with a pool",
@@ -87,4 +69,4 @@ async function main() {
   }
 }
 
-main();
+if (require.main === module) main();

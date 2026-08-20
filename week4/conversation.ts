@@ -160,4 +160,4 @@ async function main() {
   process.exit(0);
 }
 
-main();
+if (require.main === module) main();

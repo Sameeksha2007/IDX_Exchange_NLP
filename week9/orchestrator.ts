@@ -55,8 +55,24 @@ export async function orchestrate(message: string, userId: string): Promise<stri
     }
 
     case "knowledge": {
-      return "Knowledge base coming soon. Try asking about properties or market stats.";
-    }
+  const msg = message.toLowerCase();
+  if (msg.includes("hoa")) {
+    return "HOA stands for Homeowners Association — an organization that makes and enforces rules for properties in a subdivision. Members pay monthly fees used for upkeep of common areas and shared amenities like pools, gyms, and landscaping.";
+  }
+  if (msg.includes("dom") || msg.includes("days on market")) {
+    return "DOM (Days on Market) is the number of days a property has been listed for sale. A low DOM indicates high demand. A high DOM may indicate the property is overpriced or needs work.";
+  }
+  if (msg.includes("list-to-close") || msg.includes("list to close")) {
+    return "List-to-close ratio is the percentage of the list price that a property actually sold for. Above 100% means the home sold above asking price — a sellers market. Below 100% means it sold below asking — a buyers market.";
+  }
+  if (msg.includes("escrow")) {
+    return "Escrow is a neutral third party that holds funds and documents during a real estate transaction until all conditions are met by both buyer and seller.";
+  }
+  if (msg.includes("comp") || msg.includes("comparable")) {
+    return "Comps (Comparables) are recently sold properties similar in size, location, and condition used to determine a property's market value.";
+  }
+  return "Try asking about HOA, DOM, list-to-close ratio, escrow, or comps.";
+}
 
     case "mixed": {
       const filters = await parsePropertyQuery(message);

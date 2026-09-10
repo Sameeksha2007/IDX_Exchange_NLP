@@ -36,7 +36,7 @@ export async function onWhatsAppMessage(message: string, userId: string): Promis
 
 // Simulate a WhatsApp conversation
 async function main() {
-  const userId = "whatsapp:+15555550123";
+  const userId = "whatsapp:+8583109839";
 
   const messages = [
     "Hi",

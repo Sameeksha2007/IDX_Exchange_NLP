@@ -109,5 +109,5 @@ recommendationAgent | ragAgent | emailAgent] → rets_property / california_sold
 - Every destructive action requires confirmation
 
 ## Intern
-Sameeksha Vashishtha — UCI Computer Science
+Sameeksha Vashishtha — UCSD Math-Computer Science
 IDX Exchange AI Agentic Engineer Intern — Summer 2026

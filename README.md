@@ -111,3 +111,6 @@ recommendationAgent | ragAgent | emailAgent] → rets_property / california_sold
 ## Intern
 Sameeksha Vashishtha — UCSD Math-Computer Science
 IDX Exchange AI Agentic Engineer Intern — Summer 2026
+
+## License
+Confidential — IDX Exchange Internship Program.
